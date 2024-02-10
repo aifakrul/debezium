@@ -113,7 +113,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - KAFKA_CONNECT_URIS=http://connect1:8083,http://connect2:8084
+      - KAFKA_CONNECT_URIS=http://connect1:8083,http://connect2:8084,http://connect2:8085
     depends_on:
       - connect1  
       - connect2
@@ -144,7 +144,7 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false  # Disable user signup
       - GF_DATASOURCES_DEFAULT_DATASOURCE_NAME=Prometheus
       - GF_DATASOURCES_DEFAULT_DATASOURCE_TYPE=prometheus
-      - GF_DATASOURCES_DEFAULT_DATASOURCE_URL=http://prometheus:9090  # Replace with your Prometheus endpoint
+      - GF_DATASOURCES_DEFAULT_DATASOURCE_URL=http://cse-sust-network:9090  # Replace with your Prometheus endpoint
     depends_on:
       - kafka
       - connect1  
