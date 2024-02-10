@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: mssql
+    static_configs:
+      - targets: ['cse-sust-network:1433']
+  - job_name: debezium-cse-sust-cluster-1
+    static_configs:
+      - targets: ['cse-sust-network:8083']
+  - job_name: debezium-cse-sust-cluster-2
+    static_configs:
+      - targets: ['cse-sust-network:8084']
+  - job_name: debezium-cse-sust-cluster-3
+    static_configs:
+      - targets: ['cse-sust-network:8084']      
+  - job_name: kafka
+    static_configs:
+      - targets: ['cse-sust-network:9092']      
